@@ -4,13 +4,12 @@ import 'firebase/auth';
 
 const config = {
   apiKey: "AIzaSyCokY8wQkOgu5fcPGhiDRj3LivXNZc5bUg",
-  authDomain: "crn-db-e96d4.firebaseapp.com",
-  databaseURL: "https://crn-db-e96d4.firebaseio.com",
-  projectId: "crn-db-e96d4",
-  storageBucket: "crn-db-e96d4.appspot.com",
-  messagingSenderId: "298578678216",
-  appId: "1:298578678216:web:b645397a5f47fe5addb0fd",
-  measurementId: "G-09TLPJ8JXZ"
+  authDomain: 'crwn-db.firebaseapp.com',
+  databaseURL: 'https://crwn-db.firebaseio.com',
+  projectId: 'crn-db-e96d4',
+  storageBucket: 'crwn-db.appspot.com',
+  messagingSenderId: '850995411664',
+  appId: '1:850995411664:web:7ddc01d597846f65'
 };
 
 firebase.initializeApp(config);
@@ -40,28 +39,30 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
-  const collectRef = firestore.collection(collectionKey);
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
 
   const batch = firestore.batch();
-
   objectsToAdd.forEach(obj => {
-    const newDocRef = collectRef.doc();
+    const newDocRef = collectionRef.doc();
     batch.set(newDocRef, obj);
   });
 
   return await batch.commit();
 };
 
-export const convertCollectionsSnapshotToMap = (collections) => {
-  const transformedCollection = collections.docs.map((doc) => {
+export const convertCollectionsSnapshotToMap = collections => {
+  const transformedCollection = collections.docs.map(doc => {
     const { title, items } = doc.data();
 
     return {
       routeName: encodeURI(title.toLowerCase()),
       id: doc.id,
       title,
-      items,
+      items
     };
   });
 
