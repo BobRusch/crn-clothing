@@ -32,11 +32,7 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
-  @media screen and (min-width: 800px) {
-    width: 50%;
-  }
-  
+ 
   @media screen and (max-width: 800px) {
     width: 90%;
   }
@@ -45,4 +41,8 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+
+  @media screen and (max-width: 400px) {
+    padding: 5px 3px;
+  }
 `;
