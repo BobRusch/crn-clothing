@@ -7,6 +7,7 @@ export const CollectionPreviewContainer = styled.div`
 
   @media screen and (max-width: 800px) {
     align-items: center;
+    justify-content: space-between;
   }
 `;
 
@@ -28,5 +29,13 @@ export const PreviewContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
   }
 `;

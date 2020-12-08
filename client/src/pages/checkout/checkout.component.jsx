@@ -41,11 +41,17 @@ const CheckoutPage = ({ cartItems, total }) => (
       <block>
         *** Please use one of the following cards for payments ***
         <br />
-        VISA ==>> 4242 4242 4242 4242 expr. 04/24 CVV: 424
+        VISA ==> 4242 4242 4242 4242
         <br />
-        MC  ==>> 5555 5555 5555 4444 expr. 05/24 CVV: 545
+        expr. 04/24 CVV: 424
         <br />
-        DISC ==>> 6011 1111 1111 1117 expr. 01/24 CVV: 171
+        MC  ==> 5555 5555 5555 4444
+        <br />
+        expr. 05/24 CVV: 545
+        <br />
+        DISC ==> 6011 1111 1111 1117
+        <br />
+        expr. 01/24 CVV: 171
        <br />
       </block>
     </div>

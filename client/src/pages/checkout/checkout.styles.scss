@@ -7,7 +7,7 @@
   margin: 50px auto 0;
 
   @media screen and (max-width: 800px){
-    width: 85%;
+    width: 90vw;
   }
 
   .checkout-header {
@@ -45,6 +45,7 @@
     color: red;
 
     @media screen and (max-width: 350px) {
+      width: 80vw;
       font-size: 20px;
     }
   }
