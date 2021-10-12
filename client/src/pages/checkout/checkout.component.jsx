@@ -52,7 +52,8 @@ const CheckoutPage = ({ cartItems, total }) => (
         DISC ==> 6011 1111 1111 1117
         <br />
         expr. 01/24 CVV: 171
-       <br />
+        <br />
+        SINCE THIS IS A TEST SITE CART IS NOT UNLOADED
       </block>
     </div>
     <StripeCheckoutButton price={total} />
