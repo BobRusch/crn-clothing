@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(port, error => {
+app.listen(port, (error) => {
   if (error) throw error;
   console.log('Payment Server is running on port ' + port);
 });
@@ -34,7 +34,7 @@ app.post('/payment', (req, res) => {
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
-    currency: 'usd'
+    currency: 'usd',
   };
 
   stripe.charges.create(body, (stripeErr, stripeRes) => {
@@ -44,5 +44,4 @@ app.post('/payment', (req, res) => {
       res.status(200).send({ success: stripeRes });
     }
   });
-// end
 });
